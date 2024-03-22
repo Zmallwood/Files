@@ -1,0 +1,6 @@
+cmake_minimum_required (VERSION 3.5)
+project (Forradia)
+set(CMAKE_CXX_FLAGS "-static-libstdc++ -static-libgcc -Wl,-Bstatic,--whole-archive -lwinpthread -Wl,-Bdynamic,--no-whole-archive")
+file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+add_executable(Forradia ${SRC_FILES})
+target_link_libraries(Forradia SDL2)
